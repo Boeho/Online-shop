@@ -1,0 +1,49 @@
+<div id="admin-user-types-page">
+    <div class="admin-modal-form" *ngIf="showWindow">
+      <div class="form">
+        <app-form-add-user-type (onClose)="onClose()"></app-form-add-user-type>
+      </div>
+    </div>
+    <div class="add-button" style="width: 95%; margin: auto;">
+      <h1>User Types</h1>
+      <button mat-button (click)="onOpen()">Create User Type</button>
+    </div>
+  
+    <div class="mat-elevation-z8 admin-table">
+      <table mat-table class="full-width-table" matSort aria-label="Elements">
+  
+        <ng-container matColumnDef="title">
+          <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+          <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.title}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="priceTypeId">
+          <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Price Type Id</th>
+          <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.priceTypeId}}</td>
+        </ng-container>
+         
+        <ng-container matColumnDef="actions">
+          <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+          <td class="big-text-blok" mat-cell *matCellDef="let row">
+            <button mat-button >Edit</button>
+          </td>
+        </ng-container>
+        
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator #paginator
+          [length]="dataSource?.data?.length"
+          [pageIndex]="page"
+          [pageSize]="take"
+          [pageSizeOptions]="[25, 50, 100, 250]">
+      </mat-paginator>
+    </div>
+  </div>
+  
+  
+  
+  
+  

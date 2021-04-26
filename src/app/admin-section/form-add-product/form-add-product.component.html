@@ -1,0 +1,65 @@
+<div class="product-form">
+  <mat-card class="admin-main-form">
+
+    <mat-card-subtitle>
+      Create Product
+    </mat-card-subtitle>
+
+      <mat-card-content class="items">
+        <form [formGroup]="adminProductForm" (ngSubmit)="onSubmit()">
+
+          <mat-form-field class="form-field">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title">
+            <button mat-button *ngIf="adminProductForm.controls.title.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.title.reset()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <!-- <mat-form-field class="form-field">
+            <mat-label>Home page title</mat-label>
+            <input matInput type="text" formControlName="titleOnHomePage">
+            <button mat-button *ngIf="adminProductForm.controls.titleOnHomePage.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.titleOnHomePage.reset()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field class="form-field">
+            <mat-label>Category page title</mat-label>
+            <input matInput type="text" formControlName="titleOnCategoryPage">
+            <button mat-button *ngIf="adminProductForm.controls.titleOnCategoryPage.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.titleOnCategoryPage.reset()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field class="form-field">
+            <mat-label>Category description</mat-label>
+            <textarea rows="6" matInput type="text" formControlName="description"> </textarea>
+            <button mat-button *ngIf="adminProductForm.controls.description.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.description.reset()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <div class="chouse-file-input">
+            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+            <div><img [src]="url" *ngIf="url">
+              <button mat-button *ngIf="adminProductForm.controls.imagePath.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.imagePath.reset()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+            <p>
+              <input type="file" (change)="selectFile($event)" formControlName="imagePath">
+            </p>
+          </div> -->
+
+          <!-- <mat-checkbox formControlName="isOnHomePage" class="example-margin">Check me!</mat-checkbox> -->
+
+          <button mat-button color="primary" type="submit" [disabled]="!adminProductForm.valid">Add Product</button>
+          <button mat-button color="warn" class="close" (click)="close()">Close</button>
+
+        </form>
+      </mat-card-content>
+  </mat-card>
+</div>
+
+

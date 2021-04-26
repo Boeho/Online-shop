@@ -1,0 +1,72 @@
+<div id="admin-discount-page">
+    <div class="admin-modal-form" *ngIf="showWindow">
+      <div class="form">
+        <app-form-add-discount (onClose)="onClose()"></app-form-add-discount>
+      </div>
+    </div>
+    <div class="add-button" style="width: 95%; margin: auto;">
+      <h1>Discounts</h1>
+      <button mat-button (click)="onOpen()">Create Discount</button>
+    </div>
+  
+    <div class="mat-elevation-z8 admin-table">
+      <table mat-table class="full-width-table" matSort aria-label="Elements">
+  
+        <ng-container matColumnDef="title">
+          <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+          <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.title}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="description">
+          <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+          <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.description}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="imagePath">
+            <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+            <td class="big-text-blok" mat-cell *matCellDef="let row">
+              <img width="100px" [src]="row.imagePath">
+            </td>
+          </ng-container>
+  
+        <ng-container matColumnDef="isFreeDelivery">
+          <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Free Delivery</th>
+          <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.isFreeDelivery}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="isRenderToOrderEmail">
+            <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Render Email</th>
+            <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.isRenderToOrderEmail}}</td>
+          </ng-container>
+  
+
+          <ng-container matColumnDef="orderEmailTitle">
+            <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Email Title</th>
+            <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.orderEmailTitle}}</td>
+          </ng-container>
+         
+        <ng-container matColumnDef="actions">
+          <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+          <td class="big-text-blok" mat-cell *matCellDef="let row">
+            <button mat-button >Edit</button>
+          </td>
+        </ng-container>
+        
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator #paginator
+          [length]="dataSource?.data?.length"
+          [pageIndex]="page"
+          [pageSize]="take"
+          [pageSizeOptions]="[25, 50, 100, 250]">
+      </mat-paginator>
+    </div>
+  </div>
+  
+  
+  
+  
+  

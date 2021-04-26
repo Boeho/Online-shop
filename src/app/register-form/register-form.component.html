@@ -1,0 +1,15 @@
+
+<div id="register-page">
+    <div class="form reg-form">
+        <h2>Create account</h2>
+        <form [formGroup]="adminRegisterForm" (ngSubmit)="onSubmit()" id="register-form" action="">
+            <input type="text" formControlName="username" placeholder="User Name">
+            <input type="email" formControlName="email" placeholder="Email">
+            <input type="password" formControlName="password" placeholder="Password">
+            <div class="actions">
+                <button type="submit" [disabled]="!adminRegisterForm.valid">Register</button>
+            </div>
+            Or <a routerLink="/login">Sign In</a>
+        </form>
+    </div>
+</div>

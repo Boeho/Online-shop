@@ -1,0 +1,38 @@
+.top-line{
+	background: #116149;
+	padding: 2px 20px;
+	text-align: right;
+	color: white;
+}
+
+.fixed-content{
+	position: fixed;
+	right: -57px;
+	height: 42px;
+	border-radius: 5px;
+	padding: 10px 20px;
+	color: white;
+	transform: rotate(90deg);
+	top: 65%;
+	z-index: 1000;
+	background: #116149; 
+	transition: .1s;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border: 2px solid white;
+	&:hover{
+		background: orange;
+		color: #116149;
+		right: -55px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.fixed-content{
+		display: none;
+	}
+}
+
+
+
+

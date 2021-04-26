@@ -1,0 +1,44 @@
+<app-secondary-header></app-secondary-header>
+<div id="contact-page">
+    <div class="text-wrapper">
+        <h2>
+            Contact Us Now
+        </h2>
+        <p>Send us a message and we'll tell you how we can help.</p>
+    </div>
+
+    <div class="dark-opacity">
+        <img class="form-img" src="https://static01.nyt.com/images/2021/01/18/t-magazine/snow-painting-slide-WXUB/snow-painting-slide-WXUB-facebookJumbo.jpg">
+    </div>
+    <form class="review-form" action="/contact-us/submit" method="POST">
+        <div class="form-part form-part-one">
+            <label class="form-label label1 first-name-form">
+                *First Name
+                <input type="text" name="contactFname">
+            </label>
+            <label class="form-label label1 last-name-form">
+                *Last Name
+                <input type="text" name="contactLname">
+            </label>
+        </div>
+        <div class="form-part form-part-two">
+            <label class="form-label label2">
+                *Email
+                <input type="email" name="contactEmail">
+            </label>
+        </div>
+        <div class="form-part form-part-three">
+            <label class="form-label label3">
+                Comments
+                <input type="text" name="contactMessage">
+            </label>
+        </div>
+        <div class="btn-section">
+            <button type="submit">
+                Submit
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <div class="back"></div>
+        </div>
+    </form>
+</div>

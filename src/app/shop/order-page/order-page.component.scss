@@ -1,0 +1,181 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  $primary-shadow: 8px 9px 5px 2px rgba(34, 60, 80, 0.16);
+$primary-color: #116149;
+
+  #order-page{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+	  h1{
+		  width: 77%;
+		  text-align: left;
+		  text-transform: uppercase;
+		  font-size: 42px; 
+		  margin: 50px auto;
+	  }
+    .products{
+        width: 1300px;
+        display: flex;
+        flex-wrap: wrap;
+      .product{
+        width: 390px;
+        border: 3px solid $primary-color;
+        margin: 15px;
+        display: flex;
+        align-items: center;
+        box-shadow: $primary-shadow;
+        .product-img{
+          width: 50%;
+          display: inline-block;
+          overflow: hidden;
+          vertical-align: middle;
+          padding: 5px;
+          img{
+            width: 100%;
+            height: auto;
+            max-height: 290px;
+            object-fit: cover;
+          }
+        }
+        .wrapper{
+          height: 100%; 
+          width: 50%; 
+          display: inline-block; 
+          vertical-align: middle; 
+          background: #eff2f7;
+          display: flex;
+          align-items: center;
+          .product-details{
+            width: 100%;
+            overflow: hidden;
+            padding: 15px;
+
+            h2{
+              font-family: "Montserrat", sans-serif;
+              font-size: 22px;
+              font-weight: 300;
+              line-height: 61px;
+              margin-bottom: 7px;
+              color: #116149;
+              text-align: left;
+            }
+            p{
+              font-size: 12px;
+              color: #000;
+              font-family: inherit;
+              font-weight: 300;
+              line-height: 24px;
+            }
+            .price{
+              opacity: 0.8;
+              font-family: "Montserrat", sans-serif;
+              font-size: 22px;
+              font-weight: 400;
+              letter-spacing: 1.2px;
+              text-transform: uppercase;
+              margin-bottom: 7px;
+              color: #491160;
+            }
+            .add-btn{
+              width: 100%;
+              a{
+                width: 100%;
+                button{
+                  background-color: rgba(225, 225, 225, .7);
+                  border: 2px solid #fff;
+                  line-height: 60px;
+                  position: relative;
+                  outline: none;
+                  color: #116149;
+                  width: 100%;
+                  transition: .3s;
+                  z-index: 1;
+                  margin-top: 15px;
+                  &:hover{
+                      background-color: rgba(41, 41, 41, 0);
+                      border: 2px solid #116149;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1260px) {
+    #order-page{
+      .products{
+        width: 992px;
+        margin: auto;
+        justify-content: space-around;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    #order-page{
+      .products{
+        width: 97%;
+        .product{
+          width: 365px;
+            margin: 15px auto;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    #order-page{
+      .products{
+        width: 100%;
+        .product{
+          width: 390px;
+          margin: 15px auto;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+      #order-page{
+      .products{
+          display: block;
+          padding: 15px;
+        .product{
+          width: 100%;
+          display: block;
+          .product-img{
+            width: 100%;
+            display: block;
+            vertical-align: middle;
+            padding: 5px;
+            img{
+              width: 100%;
+              max-height: 100%;
+            }
+          }
+          .wrapper{
+            height: auto;
+            width: 100%; 
+            display: block; 
+            .product-details{
+              width: 100%;
+              padding-top: 0;
+              hr{
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

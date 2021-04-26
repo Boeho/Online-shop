@@ -1,0 +1,79 @@
+#main-nav{
+    position: absolute;
+    right: 0;
+    top: 16%;
+    color: white;
+    z-index: 1;
+    padding-right: 6%;
+    a{
+        color: white;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 2.2px;
+        text-transform: uppercase;
+        word-spacing: 16px;
+    }
+}
+
+#phone-nav{
+    display: block;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    .burger{
+        width: 100%;
+        position: relative;
+        text-align: right;
+        mat-toolbar{
+            background: none;
+            button{
+                outline: none;
+                color: orange;
+            }
+        }
+    }
+    #navigation{
+        mat-toolbar{
+            opacity: .8;
+            background: white;
+            color: black;
+            max-width: 100%;
+            position: relative;
+            left: -992px;
+        }
+    }
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+@media only screen and (max-width: 992px) {
+    // #phone-nav{
+    //     display: block;
+    //     width: 100%;
+    //     padding: 25px;
+    //     min-height: 100%;
+    //     position: fixed;
+    // }
+
+    #main-nav{
+      display: none;
+    //   display: block;
+    //     width: 100%;
+    //     padding: 25px;
+    //     min-height: 100%;
+    //     position: fixed;
+    //     background: #000;
+    //     top: 0;
+
+    //     a{
+    //         width: 100%;
+    //         display: block;
+    //         text-align: center;
+    //     }
+    }
+}

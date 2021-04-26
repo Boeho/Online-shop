@@ -1,0 +1,74 @@
+<app-secondary-header></app-secondary-header>
+<div id="product-page">
+    <div class="product">
+        <div class="product-item product-images">
+            <div class="galery-images img-content">
+                <img src="https://static.demilked.com/wp-content/uploads/2019/03/underwater-paintings-isabel-emrich-4.jpg" alt="">
+                <img src="https://www.awesomeinventions.com/wp-content/uploads/2019/08/underwater-oil-paintings.jpg" alt="">
+                <img src="https://www.painterartist.com/static/ptr/product_content/painter/2021/gallery/Hal-Fisher-Ballerina.jpg" alt="">
+                <img src="https://cdn20.pamono.com/p/g/5/4/541853_53xjs61mcw/tiger-s-soul-acrylic-painting-by-raphael-laventure-1.jpg" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5mDSDqg5XdkNEqtsPXyWUPAmutJ9gnZJoaA&usqp=CAU" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbw2ESwTH_GRbfXwcf0TxG5hhiEn3r7M3-rQ&usqp=CAU" alt="">
+            </div>
+            <div class="main-image img-content">
+                <img src="https://mymodernmet.com/wp/wp-content/uploads/2019/01/acrylic-painting.jpg" alt="">
+            </div>
+        </div>
+        <div class="product-item product-details-one">
+            <h3>Title Category</h3>
+            <h2>Product Title</h2>
+            <div class="product-price">
+                $100
+            </div>
+            <div class="in-stock">
+                <p>In stock:</p>
+            </div>
+            <div class="other-content">
+                <button type="submit">
+                    Add to Card
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div>
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Delivery methods:
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </div>
+            <div>
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Paymant methods:
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </div>  
+        </div>
+        <div class="product-item product-details-two">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                        (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Characteristics and description:
+                    </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt inventore aspernatur dicta voluptates numquam fugit deleniti ipsum similique porro, sit, 
+                    sapiente delectus autem libero temporibus. Repellat omnis illum cum ratione?</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

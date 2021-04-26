@@ -1,0 +1,59 @@
+<div class="discount-form">
+    <mat-card class="admin-main-form">
+
+        <mat-card-subtitle>
+        Create Discount
+    </mat-card-subtitle>
+
+        <mat-card-content class="items">
+        <form [formGroup]="adminDiscountForm" (ngSubmit)="onSubmit()">
+
+            <mat-form-field class="form-field">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title">
+            <button mat-button *ngIf="adminDiscountForm.controls.title.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminDiscountForm.controls.title.reset()">
+                <mat-icon>close</mat-icon>
+            </button>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" formControlName="description">
+            <button mat-button *ngIf="adminDiscountForm.controls.description.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminDiscountForm.controls.description.reset()">
+                <mat-icon>close</mat-icon>
+            </button>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+            <mat-label>Email Title</mat-label>
+            <input matInput type="text" formControlName="orderEmailTitle">
+            <button mat-button *ngIf="adminDiscountForm.controls.orderEmailTitle.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminDiscountForm.controls.orderEmailTitle.reset()">
+                <mat-icon>close</mat-icon>
+            </button>
+            </mat-form-field>
+
+
+            <div class="chouse-file-input">
+            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+            <div><img [src]="url" *ngIf="url">
+                <button mat-button *ngIf="adminDiscountForm.controls.imagePath.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminDiscountForm.controls.imagePath.reset()">
+                <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <p>
+                <input type="file" (change)="selectFile($event)" formControlName="imagePath">
+            </p>
+            </div>
+
+            <mat-checkbox formControlName="isFreeDelivery" class="example-margin">Free Delivery</mat-checkbox>
+            <mat-checkbox formControlName="isRenderToOrderEmail" class="example-margin">Render Email</mat-checkbox>
+
+            <button mat-button color="primary" type="submit" [disabled]="!adminDiscountForm.valid">Add Discount</button>
+            <button mat-button color="warn" class="close" (click)="close()">Close</button>
+
+        </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+

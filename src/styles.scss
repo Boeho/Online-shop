@@ -1,0 +1,162 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Sshop-primary: mat-palette($mat-indigo);
+$Sshop-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Sshop-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Sshop-theme: mat-light-theme((
+  color: (
+    primary: $Sshop-primary,
+    accent: $Sshop-accent,
+    warn: $Sshop-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Sshop-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-width-table {
+  width: 100%;
+}
+
+.admin-table{
+	width: 95%;
+	margin: 20px auto;
+}
+
+.admin-modal-form{
+	position: absolute;
+        background: rgba(17, 97, 73, .5);
+        z-index: 100000;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: fixed;
+        overflow: auto;
+        .form{
+            position: relative;
+        }
+        .big-text-block{
+            padding: 5px;
+        }
+        .header-block{
+            padding: 5px;
+
+        }
+}
+
+//admin main form styles
+.admin-main-form{
+	max-width: 800px;
+	margin: 20px auto;
+	display: flex;
+	flex-wrap: wrap;
+
+	.items{
+		width: 100%;
+		display: block;
+		text-align: center;
+		.form-field{
+			 width: 90%;
+			 background-color: #d5efdd;
+			 padding: 0 10px;
+			 margin: 10px auto;
+			 border-radius: 3px;
+		}
+		.html-text-editor{
+			width: 90%;
+			margin: 10px auto;
+			border-radius: 3px;
+			.angular-editor-textarea{
+				height: 200px!important;
+			}
+		}
+		.chouse-file-input{
+			width: 500px;
+			overflow: hidden;
+			margin: 10px auto;
+			background-color: #ccc;
+			border-radius: 3px;
+			border: 2px solid;
+			position: relative;
+			padding: 10px;
+			img{
+				height: auto;
+				width: 100%;
+				object-fit: cover;
+				margin-bottom: 10px;
+			}
+			button{
+				position: absolute;
+			    border-radius: 50%;
+			    border: none;
+			    background: #000;
+			    color: white;
+			    outline: none;
+			    transition: .2s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 100;
+			    &:hover{
+			    	background: red;
+			    }
+			}
+		}
+	}
+}
+
+
+.big-text-blok{
+	max-width: 100px; 
+	word-wrap: break-word; 
+	background-color: #dcefe2;
+	padding: 5px!important;
+
+	border-right: 1px solid white;
+	border-left: 1px solid white;
+}
+
+.header-block{
+	max-width: 100px; 
+	word-wrap: break-word; 
+	padding: 5px!important;
+	border-right: 1px solid #dcefe2;
+	border-left: 1px solid #dcefe2;
+}
+
+
+
+$primary-color: #116149;
+$white: #fff;
+
+
+
+

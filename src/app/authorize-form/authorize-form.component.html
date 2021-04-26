@@ -1,0 +1,14 @@
+<div id="login-page">
+    <div class="form log-form">
+        <h2>Authorize</h2>
+        <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()" id="ligin-form" action="">
+            <input type="text" formControlName="username" placeholder="User Name">
+            <input type="password" formControlName="password" placeholder="Password">
+
+            <div class="actions">
+                <button type="submit" [disabled]="!adminLoginForm.valid">Log in</button>
+            </div>
+            Or <a routerLink="/register">Register</a>
+        </form>
+    </div>
+</div>

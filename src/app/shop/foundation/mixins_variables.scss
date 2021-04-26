@@ -1,0 +1,94 @@
+//variables
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,300;0,600;0,700;1,300;1,600&family=Nunito+Sans:ital,wght@0,300;0,400;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+$animation-four-ms: .9s;
+$animation-five-ms: .5s;
+$primary-color: #116149;
+$secondary-color: #1f9b76;
+$white: #fff;
+$black: #000;
+$primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
+
+$font-primary: "Nunito Sans", sans-serif;
+$font-secondary:  'Open Sans', sans-serif;
+$font-third:  'Montserrat', sans-serif;
+//variables
+
+
+@mixin main-paragraph {
+	color: #333;
+    font-family: $font-primary;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 29px;
+}
+
+@mixin primary-btn {
+	background-color: rgba(225, 225, 225, .7);
+	border: 2px solid #fff;
+	line-height: 60px;
+	position: relative;
+	outline: none;
+	color: #116149;
+	width: 233px;
+	transition: .3s;
+	z-index: 1;
+	margin-top: 25px;
+	&:hover{
+		background-color: rgba(41, 41, 41, 0);
+		border: 2px solid #116149;
+	}
+}
+
+@mixin secondary-btn {
+	min-width: 208px;
+    height: 67px;
+    line-height: 67px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-transform: capitalize;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 500;
+	background-color: rgba(225, 225, 225, 0.7);
+	background: #a0c0b6;
+    border: 2px solid #fff;
+    line-height: 55px;
+    position: relative;
+    outline: none;
+    width: 200px;
+    transition: 0.3s;
+    z-index: 1;
+	&:hover{
+		background-color: rgba(41, 41, 41, 0);
+		border: 2px solid #116149;
+		color: $primary-color;
+	}
+}
+
+@mixin third-btn {
+	min-width: 208px;
+    height: 67px;
+    line-height: 67px;
+    border-radius: 4px;
+    color: $primary-color;
+    text-transform: capitalize;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 500;
+	background-color: rgba(225, 225, 225, 0.7);
+    border: 2px solid $white;
+    line-height: 55px;
+    position: relative;
+    outline: none;
+    width: 200px;
+    transition: 0.3s;
+    z-index: 1;
+	&:hover{
+		background: #a0c0b6;;
+		border: 2px solid $white;
+		color: $white;
+	}
+}

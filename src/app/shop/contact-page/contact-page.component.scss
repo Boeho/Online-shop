@@ -1,0 +1,131 @@
+$primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
+
+#contact-page{
+    max-height: 450px;
+    .text-wrapper{
+        width: 95%;
+        text-align: left;
+        margin: auto;
+        margin-bottom: 25px;
+        h2{
+            margin-bottom: 3px;
+        }
+        p{
+            color: grey;
+        }
+    }
+    .dark-opacity{
+        width: 95%;
+        position: relative;
+        background: #000;
+        margin: auto;
+        -webkit-box-shadow: $primary-shadow;
+        -moz-box-shadow: $primary-shadow;
+        box-shadow: $primary-shadow;
+        .form-img {
+            width: 100%;
+            object-fit: cover;
+            height: 450px;
+            padding-right: 0;
+            padding-left: 0;
+            opacity: .3;
+            z-index: -1;
+        }
+    }
+    .btn-section{
+        width: 233px;
+        background-color: rgba(41, 41, 41, 0);
+        line-height: 60px;
+        margin: 0 auto;
+        position: relative;
+        transition: .5s;
+        &:hover{
+            .back{
+                left: -15px;
+                top: 15px;
+            }
+        }
+        button{
+            background-color: rgba(41, 41, 41, 0);
+            border: 2px solid #fff;
+            line-height: 60px;
+            position: relative;
+            outline: none;
+            color: #fff;
+            width: 233px;
+            transition: .3s;
+            z-index: 1;
+            &:hover{
+                background-color: rgba(225, 225, 225, .7);
+                color: #000;
+            }
+        }
+        .back{
+            width: 233px;
+            background-color: rgba(41, 41, 41, 0);
+            height: 66px;
+            border: 2px solid #fff;
+            margin: 0 auto;
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            transition: .3s;
+            z-index: 0;
+        }
+    }
+    .review-form {
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        transform: translateY(-128%);
+        input {
+            background-color: rgba(41, 41, 41, 0);
+            border: none;
+            border-bottom: 2px solid #fff;
+            width: 100%;
+            outline: none;
+            position: relative;
+            transition: .9s;
+            color: #fff;
+            &:hover {
+                transform: translateX(10px);
+                bottom: -3px;
+            }
+        }
+        .form-part {
+            margin-bottom: 20px;
+            .form-label {
+                width: 100%;
+                text-align: left;
+                color: #fff;
+            }
+        }
+        .form-part-one {
+            .form-label {
+                width: 47%;
+                margin-bottom: 20px;
+            }
+        }
+        .first-name-form {
+            float: left;
+        }
+        .last-name-form {
+            float: right;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #contact-page{
+        .review-form {
+            width: 100%;
+            padding: 25px;
+        }
+    }
+}
+
+
+
+
+

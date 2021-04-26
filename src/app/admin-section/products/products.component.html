@@ -1,0 +1,101 @@
+<div class="admin-modal-form" *ngIf="showWindow">
+  <div class="form">
+    <app-form-add-product (onClose)="onClose()"></app-form-add-product>
+  </div>
+</div>
+<div class="add-button" style="width: 95%; margin: auto;">
+  <h1>Products</h1>
+  <button mat-button (click)="onOpen()">Create Product</button>
+</div>
+
+<div class="mat-elevation-z8 admin-table">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    
+    <ng-container matColumnDef="title">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.title}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="categoryId">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Home page title</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.categoryId}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="sizeId">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Category page title</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.sizeId}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="colorId">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Category description</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.colorId}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="imageOnProductPage">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">
+        <img width="100px" [src]="row.imageOnProductPage">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="imageOnCategoryPage">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">
+        <img width="100px" [src]="row.imageOnCategoryPage">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="isConsiderDiscount">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Consider Discount</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.isConsiderDiscount}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="inStore">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>In Store</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.inStore}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="productId">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Product Id</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.productId}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="priceTypeId">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Price Type Id</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.priceTypeId}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Value</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.value}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="titlePhoto">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Product Id</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.titlePhoto}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="imagePath">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Price Type Id</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.imagePath}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="photoProductId">
+      <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Value</th>
+      <td class="big-text-blok" mat-cell *matCellDef="let row">{{row.photoProductId}}</td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="page"
+      [pageSize]="take"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>
+
+

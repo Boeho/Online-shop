@@ -1,0 +1,35 @@
+<div class="user-types-form">
+    <mat-card class="admin-main-form">
+
+        <mat-card-subtitle>
+        Create User Type
+    </mat-card-subtitle>
+
+        <mat-card-content class="items">
+        <form [formGroup]="adminUserTypesForm" (ngSubmit)="onSubmit()">
+
+            <mat-form-field class="form-field">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title">
+            <button mat-button *ngIf="adminUserTypesForm.controls.title.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminUserTypesForm.controls.title.reset()">
+                <mat-icon>close</mat-icon>
+            </button>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+            <mat-label>Price Type</mat-label>
+            <input matInput type="text" formControlName="priceTypeId">
+            <button mat-button *ngIf="adminUserTypesForm.controls.priceTypeId.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminUserTypesForm.controls.priceTypeId.reset()">
+                <mat-icon>close</mat-icon>
+            </button>
+            </mat-form-field>
+
+            <button mat-button color="primary" type="submit" [disabled]="!adminUserTypesForm.valid">Add User Type</button>
+            <button mat-button color="warn" class="close" (click)="close()">Close</button>
+
+        </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
