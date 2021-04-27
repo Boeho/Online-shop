@@ -51,8 +51,13 @@ export class FormAddTransportationOptionComponent implements OnInit {
 	ngOnInit(): void {
 	}
 	onSubmit() {
-		debugger
-		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/transportation-options', this.adminTransportationOptionForm.value)
+		//create transportation option
+		const token = localStorage.getItem('token') as string
+		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/transportation-options', this.adminTransportationOptionForm.value, {
+			headers:{
+				Authorize: 'Bearer' + token
+			}
+		})
 		.subscribe();
 	}
 

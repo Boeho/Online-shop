@@ -53,8 +53,13 @@ export class FormAddPostComponent implements OnInit {
 	ngOnInit(): void {
 	}
 	onSubmit() {
-		debugger
-		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/posts', this.adminPostForm.value)
+		//create post
+		const token = localStorage.getItem('token') as string
+		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/posts', this.adminPostForm.value, {
+			headers: {
+				Authorize: 'Bearer' + token
+			}
+		})
 		.subscribe();
 	}
 

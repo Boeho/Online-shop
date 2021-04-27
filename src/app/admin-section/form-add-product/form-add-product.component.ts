@@ -61,7 +61,13 @@ export class FormAddProductComponent implements OnInit {
 	}
 
 	public onSubmit() {
-		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/products', this.adminProductForm.value)
+		//create product
+		const token = localStorage.getItem('token') as string
+		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/products', this.adminProductForm.value, {
+			headers:{
+				Authorize: 'Bearer' + token
+			}
+		})
 		.subscribe();
 	}
 

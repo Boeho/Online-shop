@@ -53,10 +53,18 @@ export class FormAddCategoriesComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+
 	}
+	
 	onSubmit() {
-		debugger
-		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/product-categories', this.adminCategoryForm.value)
+		//creating category
+		const token = localStorage.getItem('token') as string;
+		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/product-categories', this.adminCategoryForm.value, {
+
+			headers: {
+				Authorization: 'Bearer ' + token
+			}
+		})
 		.subscribe();
 	}
 

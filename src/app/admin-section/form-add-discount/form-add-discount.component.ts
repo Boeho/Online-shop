@@ -15,9 +15,9 @@ export class FormAddDiscountComponent implements OnInit {
 	@Output() onClose= new EventEmitter();
 
 	adminDiscountForm = new FormGroup({
-		title: new FormControl(''),
-		description: new FormControl(''),
-		imagePath: new FormControl(''),
+	title: new FormControl(''),
+	description: new FormControl(''),
+	imagePath: new FormControl(''),
     isFreeDelivery: new FormControl(''),
     isRenderToOrderEmail: new FormControl(''),
     orderEmailTitle: new FormControl('')
@@ -53,10 +53,17 @@ export class FormAddDiscountComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+
 	}
+
 	onSubmit() {
-		debugger
-		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/discounts', this.adminDiscountForm.value)
+		//create discount
+		const token = localStorage.getItem('token') as string;
+		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/discounts', this.adminDiscountForm.value, {
+			headers: {
+				Authorize: 'Bearer' + token
+			}
+		})
 		.subscribe();
 	}
 

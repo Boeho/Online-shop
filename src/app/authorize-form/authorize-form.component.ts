@@ -27,9 +27,15 @@ export class AuthorizeFormComponent implements OnInit {
 	}
   
 	onSubmit() {
-		debugger
 		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/users/login', this.adminLoginForm.value)
-		.subscribe();
+		.subscribe(
+			(res:any) => {
+				localStorage.setItem('token', res.token);
+			}, 
+			err => {
+				console.log(err)
+			}
+		);
 	}
 
 }

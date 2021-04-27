@@ -51,8 +51,13 @@ export class FormAddUserTypeComponent implements OnInit {
 	ngOnInit(): void {
 	}
 	onSubmit() {
-		debugger
-		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/user-types', this.adminUserTypesForm.value)
+		//create user type
+		const token = localStorage.getItem('token') as string
+		this.http.post('https://glacial-refuge-78878.herokuapp.com/api/user-types', this.adminUserTypesForm.value, {
+			headers: {
+				Authorize: 'Bearer' + token
+			}
+		})
 		.subscribe();
 	}
 
