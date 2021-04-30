@@ -6,6 +6,8 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+
 
 const routes: Routes = [
   
@@ -15,6 +17,8 @@ const routes: Routes = [
 { path: 'category-page', component: CategoryPageComponent },
 { path: 'product-page', component: ProductPageComponent },
 { path: 'blog-page', component: BlogPageComponent },
+{ path: 'cart-page', component: CartPageComponent },
+
 
 ];
 

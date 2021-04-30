@@ -1,19 +1,4 @@
-.example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-
-  $primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
-  $animation-four-ms: .9s;
-
-$animation-five-ms: .5s;
-$primary-color: #116149;
-$white: #fff;
-$primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
+@import "../foundation/mixins_variables.scss";
 
 #category-page{
   display: flex;
@@ -33,7 +18,7 @@ $primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
       flex-wrap: wrap;
     .category{
       width: 390px;
-      // border: 3px solid $primary-color;
+      border: 1px solid rgba(0, 0, 0, .125);
       margin: 15px;
       max-height: 400px;
       height: 350px;
@@ -73,26 +58,24 @@ $primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
         background: #eff2f7;
         display: flex;
         align-items: center;
+        padding: 15px;
         .category-details{
           width: 100%;
           overflow: hidden;
-          padding: 15px;
-
           h2{
-            font-family: "Montserrat", sans-serif;
-            font-size: 22px;
+            font-family: $font-primary;
+            font-size: 20px;
             font-weight: 300;
-            line-height: 61px;
-            margin-bottom: 7px;
+            line-height: 31px;
             color: #116149;
             text-align: left;
+            margin-bottom: 5px
           }
           p{
-            font-size: 12px;
-            color: #000;
-            font-family: inherit;
-            font-weight: 300;
-            line-height: 24px;
+            @include main-paragraph;
+            font-size: 15px;
+            margin-bottom: 0;
+            line-height: 22px;
           }
           .price{
             opacity: 0.8;
@@ -135,37 +118,37 @@ $primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
   }
 
   @media only screen and (max-width: 1260px) {
-  #category-page{
-    .categories{
-      width: 992px;
-      margin: auto;
-      justify-content: space-around;
+    #category-page{
+      .categories{
+        width: 992px;
+        margin: auto;
+        justify-content: space-around;
+      }
     }
-  }
   }
 
   @media only screen and (max-width: 992px) {
-  #category-page{
-    .categories{
-      width: 97%;
-      .category{
-        width: 365px;
-          margin: 15px auto;
+    #category-page{
+      .categories{
+        width: 97%;
+        .category{
+          width: 365px;
+            margin: 15px auto;
+        }
       }
     }
-  }
   }
 
   @media only screen and (max-width: 768px) {
-  #category-page{
-    .categories{
-      width: 100%;
-      .category{
-        width: 390px;
-        margin: 15px auto;
+    #category-page{
+      .categories{
+        width: 100%;
+        .category{
+          width: 390px;
+          margin: 15px auto;
+        }
       }
     }
-  }
   }
   @media only screen and (max-width: 600px) {
     #category-page{
@@ -178,7 +161,6 @@ $primary-shadow: 6px 7px 8px 2px rgba(34, 60, 80, 0.25);
         .category-img{
           width: 100%;
           display: block;
-          vertical-align: middle;
           padding: 5px;
           img{
             width: 100%;

@@ -21,6 +21,12 @@ export class MainNavComponent {
     //   navigation.style.display = navigation.style.left == '992px' ? '-992px' : '992px'; 
     // } 
 
+    mainNavDisplayNone = 'none';
+  
+    dropNavBtn(){
+      this.mainNavDisplayNone = this.mainNavDisplayNone == 'block' ? 'none' : 'block';
+    }
+
   constructor(private breakpointObserver: BreakpointObserver) {}
   showFiller = false;
 }

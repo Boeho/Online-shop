@@ -1,4 +1,6 @@
+import { templateJitUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-order-page',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPageComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  constructor() { 
   }
 
+  ngOnInit(): void { 
+
+  }
+
+
 }
+
+

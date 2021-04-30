@@ -1,4 +1,4 @@
-<div id="main-nav">
+<div id="main-nav" [style.display]="mainNavDisplayNone">
   <a routerLink="/shop/home-page">
     Home
   </a>
@@ -15,38 +15,27 @@
   <mat-menu #beforeMenu="matMenu">
   </mat-menu>
   <a routerLink="/shop/category-page">
-    categories
+    Categories
+  </a>
+  <mat-menu #afterMenu="matMenu">
+  </mat-menu>
+  <a routerLink="/shop/about-page">
+    About
+  </a>
+  <mat-menu #afterMenu="matMenu">
+  </mat-menu>
+  <a routerLink="/shop/reviews-page">
+    Reviews
+  </a>
+  <mat-menu #afterMenu="matMenu">
+  </mat-menu>
+  <a routerLink="/shop/cart-page">
+    <img width="35px" src="../../assets/images/shopping-cart-empty-side-view.svg" alt="Cart Icon">
   </a>
   <mat-menu #afterMenu="matMenu">
   </mat-menu>
 </div>
 
-<!-- <div id="phone-nav">
-  <div class="burger">
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span class="example-spacer"></span>
-        <button  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </mat-toolbar-row>
-    </mat-toolbar>
+<div id="phone-nav">
+  <button class="burger" type="button" id="navToggle" (click)="dropNavBtn()"><span class="brgSpan"></span></button>
   </div>
-  <div id="navigation">
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span>Link One</span>
-      </mat-toolbar-row>
-    
-      <mat-toolbar-row>
-        <span>Link Two</span>
-        <span class="example-spacer"></span>
-      </mat-toolbar-row>
-    
-      <mat-toolbar-row>
-        <span>Link Three</span>
-        <span class="example-spacer"></span>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    </div>
-  </div> -->

@@ -8,24 +8,21 @@ import { HttpClient } from '@angular/common/http';
 //   styleUrls: ['./form-add-product.component.scss']
 })
 export class FormAddProductComponent implements OnInit {
-
 	@Output() onClose= new EventEmitter();
-
+	disableSelect = new FormControl(false);
   public adminProductForm = new FormGroup({
-    title: new FormControl(''),
-		// categoryId: 0,
-		// sizeId: 0,
-		// colorId: 0,
-		// imageOnProductPage: '',
-		// imageOnCategoryPage: '',
-    // isConsiderDiscount: false,
-		// inStore: false,
-		// prices: [],
-    // photos: []
+    	title: new FormControl(''),
+		categoryId: new FormControl(''),
+		imageOnProductPage: new FormControl(''),
+  		imageOnCategoryPage: new FormControl(''),
+    	isConsiderDiscount: new FormControl(''),
+		orderInShoppingCart: new FormControl(''),
+		inStore: new FormControl(''),
+		priceTypeId: new FormControl(''),
   })
-  
 	public url: any;
 	public msg = "";
+	values = "";
 
   constructor(private http:HttpClient) {
 	}
@@ -55,6 +52,12 @@ export class FormAddProductComponent implements OnInit {
 			this.url = reader.result; 
 		}
 	}
+
+	onGetPrice(event:any) {
+		const data = this.values = event.target.value;
+		console.log(data)
+		localStorage.setItem('productPrice', data);
+	  }
 
   public close() {
 		this.onClose.emit()

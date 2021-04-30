@@ -1,21 +1,88 @@
 <app-secondary-header></app-secondary-header>
 <div id="cart-page">
-    <h2>Our Orders</h2>
-    <div class="orders">
-        <div class="order">
-            <h2>Post Title</h2>
-            <h3>Posted by Date</h3>
-            <div class="main-wrapper">
-                <div class="image-wrapper">
-                    <img src="https://i.pinimg.com/originals/e6/ff/59/e6ff5965d08633907887a115b65c24a6.png" alt="Post Image">
-                </div>
-                <div class="text-wrapper">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus impedit laudantium sint explicabo dolorem, mollitia quidem voluptatum, 
-                        distinctio labore vitae sapiente delectus placeat atque, illum voluptates repellendus dignissimos quo ex.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo dolore distinctio tempore consectetur sapiente adipisci nulla eius saepe, eum hic animi qui perferendis voluptatibus 
-                        ipsam earum suscipit delectus, quisquam tenetur.
-                    </p>
-                </div>
+    <div class="cart-body">
+        <h2 class="cart-header">CART</h2>
+        <div id="cart-item">
+            <div class="image">
+                <img width="150px" height="150px" src="https://static.posters.cz/image/750/beauty-of-the-nature-3in1-i96709.jpg" alt="">
+            </div>
+            <div class="text-wrapper">
+                <h3 class="title">Title</h3>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo corrupti dolore laboriosam. 
+                </p>
+                <p class="quantity">
+                        Quantity: 2
+                </p>
+                <p class="price">
+                    Price: 100 USD
+                </p>
+            </div>
+            <div class="clear-item">
+                <button>
+                    <img width="30px" src="../../../assets/images/delete.svg" alt="">
+                </button>
+            </div>
+        </div>
+        <div id="cart-item">
+            <div class="image">
+                <img width="150px" height="150px" src="https://static.posters.cz/image/750/beauty-of-the-nature-3in1-i96709.jpg" alt="">
+            </div>
+            <div class="text-wrapper">
+                <h3 class="title">Title</h3>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo corrupti dolore laboriosam. 
+                </p>
+                <p class="quantity">
+                        Quantity: 2
+                </p>
+                <p class="price">
+                    Price: 100 USD
+                </p>
+            </div>
+            <div class="clear-item">
+                <button>
+                    <img width="30px" src="../../../assets/images/delete.svg" alt="">
+                </button>
+            </div>
+        </div>
+        <div id="cart-item">
+            <div class="image">
+                <img width="150px" height="150px" src="https://static.posters.cz/image/750/beauty-of-the-nature-3in1-i96709.jpg" alt="">
+            </div>
+            <div class="text-wrapper">
+                <h3 class="title">Title</h3>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo corrupti dolore laboriosam. 
+                </p>
+                <p class="quantity">
+                        Quantity: 2
+                </p>
+                <p class="price">
+                    Price: 100 USD
+                </p>
+            </div>
+            <div class="clear-item">
+                <button>
+                    <img width="30px" src="../../../assets/images/delete.svg" alt="">
+                </button>
+            </div>
+        </div>
+        <div class="text-wrapper">
+            <div class="main-info">
+                <div class="save-of-order">YOU SAVE: <span style="color: red;"><b>50% </b></span>OFF</div>
+                <div class="grand-total" id="total-price">GRAND TOTAL:</div>
+                <br>
+            </div>
+            <div class="actions">
+                <button class="full-btn" style="padding: 5px" type="submit" id="checkout-button">Checkout</button>
+            </div>
+        </div>
+        <div style="display: none;" class="pop-up">
+            <hr>
+            <div>
+                <h2 style="margin-bottom: 25px">You don't have any orders yet.</h2>
+                <a type="button" href="/order-page" class="getHome">Geo to shop! ➜</a>
             </div>
         </div>
     </div>

@@ -81,7 +81,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 	.items{
 		width: 100%;
-		display: block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		text-align: center;
 		.form-field{
 			 width: 90%;
@@ -89,6 +91,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 			 padding: 0 10px;
 			 margin: 10px auto;
 			 border-radius: 3px;
+		}
+		.check-boxes-selections{
+			// display: flex;
+			margin: 10px auto;
+			width: 90%;
+			.selections{
+				width: 50%;
+				display: inline-block;
+				border-right: 1px solid;
+				padding: 15px;
+				.item{
+					text-align: left;
+				}
+			}
+			.checks{
+				width: 50%;
+				display: inline-block;
+				text-align: left;
+				padding: 15px;
+
+			}
 		}
 		.html-text-editor{
 			width: 90%;

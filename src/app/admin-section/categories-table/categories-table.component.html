@@ -49,6 +49,7 @@
         <th class="header-block" mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
         <td class="big-text-blok" mat-cell *matCellDef="let row">
           <button mat-button >Edit</button>
+          <button mat-button (click)="onDelete(row.productCategoryId)" >Delete</button>
         </td>
       </ng-container>
 

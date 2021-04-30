@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { CategoriesTableDataSource, CategoriesTableItem } from './categories-table-datasource';
 import { HttpClient } from '@angular/common/http';
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategoriesTableComponent implements AfterViewInit, OnInit {
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient, private changeDetectorRefs: ChangeDetectorRef) {}
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -53,4 +54,23 @@ export class CategoriesTableComponent implements AfterViewInit, OnInit {
   onOpen() {
     this.showWindow = true;
   }
+
+    onDelete(id:number){
+      const token = localStorage.getItem('token') as string
+      this.http.delete('https://glacial-refuge-78878.herokuapp.com/api/product-categories/' + id, {
+        headers:{
+          Authorization: 'Bearer ' + token
+        }
+      })
+      .subscribe(()=>{
+          this.dataSource = new CategoriesTableDataSource();
+          this.http.get<CategoriesTableItem[]>('https://glacial-refuge-78878.herokuapp.com/api/product-categories')
+            .subscribe(res=>{
+                this.dataSource.data = res;
+                this.table.dataSource = this.dataSource;
+                this.changeDetectorRefs.detectChanges();
+          })
+        }
+      )
+    }
   }

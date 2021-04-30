@@ -16,43 +16,79 @@
             </button>
           </mat-form-field>
 
-          <!-- <mat-form-field class="form-field">
-            <mat-label>Home page title</mat-label>
-            <input matInput type="text" formControlName="titleOnHomePage">
-            <button mat-button *ngIf="adminProductForm.controls.titleOnHomePage.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.titleOnHomePage.reset()">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
-
           <mat-form-field class="form-field">
-            <mat-label>Category page title</mat-label>
-            <input matInput type="text" formControlName="titleOnCategoryPage">
-            <button mat-button *ngIf="adminProductForm.controls.titleOnCategoryPage.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.titleOnCategoryPage.reset()">
+            <mat-label>Home page title</mat-label>
+            <input matInput type="text" formControlName="categoryId">
+            <button mat-button *ngIf="adminProductForm.controls.categoryId.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.categoryId.reset()">
               <mat-icon>close</mat-icon>
             </button>
           </mat-form-field>
 
           <mat-form-field class="form-field">
             <mat-label>Category description</mat-label>
-            <textarea rows="6" matInput type="text" formControlName="description"> </textarea>
-            <button mat-button *ngIf="adminProductForm.controls.description.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.description.reset()">
+            <textarea rows="6" matInput type="text" formControlName="orderInShoppingCart"> </textarea>
+            <button mat-button *ngIf="adminProductForm.controls.orderInShoppingCart.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.orderInShoppingCart.reset()">
               <mat-icon>close</mat-icon>
             </button>
           </mat-form-field>
 
-          <div class="chouse-file-input">
-            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-            <div><img [src]="url" *ngIf="url">
-              <button mat-button *ngIf="adminProductForm.controls.imagePath.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.imagePath.reset()">
-                <mat-icon>close</mat-icon>
-              </button>
-            </div>
-            <p>
-              <input type="file" (change)="selectFile($event)" formControlName="imagePath">
-            </p>
-          </div> -->
+          <mat-form-field class="form-field">
+            <mat-label>Category description</mat-label>
+            <textarea rows="6" matInput type="text" formControlName="inStore"> </textarea>
+            <button mat-button *ngIf="adminProductForm.controls.inStore.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.inStore.reset()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
 
-          <!-- <mat-checkbox formControlName="isOnHomePage" class="example-margin">Check me!</mat-checkbox> -->
+          <div class="check-boxes-selections">
+            <div class="selections">
+              <div class="item type-select">
+                <mat-form-field appearance="fill">
+                  <mat-label>Choose an type of price</mat-label>
+                  <select matNativeControl [disabled]="disableSelect.value"  formControlName="getPriceTypeId">
+                    <option value="" selected></option>
+                    <option value="volvo">Type 1</option>
+                    <option value="saab" disabled>type 2</option>
+                    <option value="mercedes">Type 3</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="item price-input">
+                <mat-form-field class="form-field">
+                  <mat-label>Price for product</mat-label>
+                  <input matInput type="text" (input)="onGetPrice($event)">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="checks">
+              <mat-checkbox formControlName="isConsiderDiscount" class="example-margin">Consider Discount</mat-checkbox>
+            </div>
+          </div>
+
+          <div class="view">
+            <div class="chouse-file-input">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              <div><img [src]="url" *ngIf="url">
+                <button mat-button *ngIf="adminProductForm.controls.imageOnProductPage.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.imageOnProductPage.reset()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </div>
+              <p>
+                <input type="file" (change)="selectFile($event)" formControlName="imageOnProductPage">
+              </p>
+            </div>
+            <div class="chouse-file-input">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              <div><img [src]="url" *ngIf="url">
+                <button mat-button *ngIf="adminProductForm.controls.imageOnProductPage.value" matSuffix mat-icon-button aria-label="Clear" (click)="adminProductForm.controls.imageOnProductPage.reset()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </div>
+              <p>
+                <input type="file" (change)="selectFile($event)" formControlName="imageOnProductPage">
+              </p>
+            </div>
+          </div>
 
           <button mat-button color="primary" type="submit" [disabled]="!adminProductForm.valid">Add Product</button>
           <button mat-button color="warn" class="close" (click)="close()">Close</button>
